@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 17, 2021 at 12:32 PM
+-- Generation Time: Oct 26, 2021 at 04:21 PM
 -- Server version: 5.7.15-log
 -- PHP Version: 5.6.26
 
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `keahlian` (
   `keahlian_id` int(25) NOT NULL,
+  `user_id` int(25) NOT NULL,
   `keahlian` varchar(225) NOT NULL,
-  `created_by` varchar(25) NOT NULL,
   `modified_on` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -37,12 +37,11 @@ CREATE TABLE `keahlian` (
 -- Dumping data for table `keahlian`
 --
 
-INSERT INTO `keahlian` (`keahlian_id`, `keahlian`, `created_by`, `modified_on`) VALUES
-(9, 'Keahlian 1', '1', '2021-10-17 18:37:34'),
-(10, 'Keahlian 2', '1', '2021-10-17 18:53:41'),
-(11, 'Keahlian 3', '1', '2021-10-17 18:35:28'),
-(12, 'Keahlian 4', '1', '2021-10-17 18:35:22'),
-(13, 'Keahlian 5', '1', '2021-10-17 18:34:27');
+INSERT INTO `keahlian` (`keahlian_id`, `user_id`, `keahlian`, `modified_on`) VALUES
+(37, 1, 'Keahlian 1', '2021-10-17 22:05:04'),
+(38, 1, 'asdas', '2021-10-17 22:35:06'),
+(39, 1, 'asdasd', '2021-10-17 22:43:37'),
+(40, 1, 'asdasd', '2021-10-17 22:43:40');
 
 -- --------------------------------------------------------
 
@@ -52,9 +51,9 @@ INSERT INTO `keahlian` (`keahlian_id`, `keahlian`, `created_by`, `modified_on`) 
 
 CREATE TABLE `minat_bakat` (
   `minat_bakat_id` int(25) NOT NULL,
+  `user_id` int(25) NOT NULL,
   `minat_bakat` varchar(225) DEFAULT NULL,
   `deskripsi` text NOT NULL,
-  `created_by` varchar(25) NOT NULL,
   `modified_on` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -62,13 +61,8 @@ CREATE TABLE `minat_bakat` (
 -- Dumping data for table `minat_bakat`
 --
 
-INSERT INTO `minat_bakat` (`minat_bakat_id`, `minat_bakat`, `deskripsi`, `created_by`, `modified_on`) VALUES
-(51, 'Minat 1', 'Suatu minat yang', '1', '2021-10-17 18:52:31'),
-(52, 'Minat 2', 'Sesuatu hal yang akan', '1', '2021-10-17 18:52:21'),
-(53, 'Minat 3', 'Hal ini merupakan', '1', '2021-10-17 18:52:12'),
-(55, 'Minat 4', 'Minat yang memiliki', '1', '2021-10-17 18:52:04'),
-(56, 'Minat 5', 'Minat yang memiliki', '1', '2021-10-17 18:51:50'),
-(57, 'Minat 6', 'Minat ini merupakan', '1', '2021-10-17 18:51:43');
+INSERT INTO `minat_bakat` (`minat_bakat_id`, `user_id`, `minat_bakat`, `deskripsi`, `modified_on`) VALUES
+(62, 1, 'asd', 'asdasd', '2021-10-17 22:35:00');
 
 -- --------------------------------------------------------
 
@@ -78,11 +72,11 @@ INSERT INTO `minat_bakat` (`minat_bakat_id`, `minat_bakat`, `deskripsi`, `create
 
 CREATE TABLE `rule` (
   `rule_id` int(25) NOT NULL,
+  `user_id` int(25) NOT NULL,
+  `minat_bakat_id` int(25) NOT NULL,
+  `keahlian_id` int(25) NOT NULL,
   `kode_rule` varchar(25) NOT NULL,
-  `minat_bakat_id` varchar(25) NOT NULL,
-  `keahlian_id` varchar(25) NOT NULL,
   `nilai` varchar(25) NOT NULL,
-  `created_by` varchar(25) NOT NULL,
   `modified_on` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -90,19 +84,11 @@ CREATE TABLE `rule` (
 -- Dumping data for table `rule`
 --
 
-INSERT INTO `rule` (`rule_id`, `kode_rule`, `minat_bakat_id`, `keahlian_id`, `nilai`, `created_by`, `modified_on`) VALUES
-(119, 'RL91125', '51', '9', '0.8', '1', '2021-08-26 04:16:43'),
-(120, 'RL91125', '51', '10', '0.6', '1', '2021-08-26 04:16:43'),
-(121, 'RL91125', '51', '12', '0', '1', '2021-08-26 04:16:43'),
-(122, 'RL76461', '52', '12', '0.8', '1', '2021-08-26 04:17:04'),
-(123, 'RL76461', '52', '9', '0.6', '1', '2021-08-26 04:17:04'),
-(124, 'RL76461', '52', '13', '0.4', '1', '2021-08-26 04:17:04'),
-(125, 'RL57304', '53', '13', '0.6', '1', '2021-08-26 04:17:39'),
-(126, 'RL57304', '53', '10', '0.6', '1', '2021-08-26 04:17:39'),
-(127, 'RL93990', '55', '13', '0.6', '1', '2021-08-26 04:18:11'),
-(128, 'RL93990', '55', '12', '0.8', '1', '2021-08-26 04:18:11'),
-(129, 'RL93990', '55', '9', '1', '1', '2021-08-26 04:18:11'),
-(130, 'RL74459', '56', '11', '0.6', '1', '2021-08-30 11:20:28');
+INSERT INTO `rule` (`rule_id`, `user_id`, `minat_bakat_id`, `keahlian_id`, `kode_rule`, `nilai`, `modified_on`) VALUES
+(154, 1, 62, 37, 'RL38803', '0.6', '2021-10-17 22:44:09'),
+(155, 1, 62, 38, 'RL38803', '1', '2021-10-17 22:44:09'),
+(156, 1, 62, 39, 'RL38803', '0.8', '2021-10-17 22:44:09'),
+(157, 1, 62, 40, 'RL38803', '0.6', '2021-10-17 22:44:09');
 
 -- --------------------------------------------------------
 
@@ -114,17 +100,18 @@ CREATE TABLE `user` (
   `user_id` int(25) NOT NULL,
   `username` varchar(25) NOT NULL,
   `status` varchar(25) NOT NULL COMMENT '0 = tidak aktif, 1 = aktif',
-  `level` varchar(25) NOT NULL COMMENT '1 = admin',
+  `level` varchar(25) NOT NULL COMMENT '1 = admin, 2 = siswa',
   `password` text NOT NULL,
-  `modified_on` varchar(25) NOT NULL
+  `created_on` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `username`, `status`, `level`, `password`, `modified_on`) VALUES
-(1, 'sistem_pakar', '0', '1', '791da83d972fb0ffbb3f319f00309418', '2021-07-20 17:38:5');
+INSERT INTO `user` (`user_id`, `username`, `status`, `level`, `password`, `created_on`) VALUES
+(1, 'sistem_pakar', '1', '1', '791da83d972fb0ffbb3f319f00309418', '2021-07-20 17:38:5'),
+(2, 'andri', '1', '2', '6bd3108684ccc9dfd40b126877f850b0', '2021-09-28 21:32:57');
 
 --
 -- Indexes for dumped tables
@@ -134,19 +121,25 @@ INSERT INTO `user` (`user_id`, `username`, `status`, `level`, `password`, `modif
 -- Indexes for table `keahlian`
 --
 ALTER TABLE `keahlian`
-  ADD PRIMARY KEY (`keahlian_id`);
+  ADD PRIMARY KEY (`keahlian_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `minat_bakat`
 --
 ALTER TABLE `minat_bakat`
-  ADD PRIMARY KEY (`minat_bakat_id`);
+  ADD PRIMARY KEY (`minat_bakat_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `user_id_2` (`user_id`);
 
 --
 -- Indexes for table `rule`
 --
 ALTER TABLE `rule`
-  ADD PRIMARY KEY (`rule_id`);
+  ADD PRIMARY KEY (`rule_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `minat_bakat_id` (`minat_bakat_id`),
+  ADD KEY `keahlian_id` (`keahlian_id`);
 
 --
 -- Indexes for table `user`
@@ -162,22 +155,45 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `keahlian`
 --
 ALTER TABLE `keahlian`
-  MODIFY `keahlian_id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `keahlian_id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 --
 -- AUTO_INCREMENT for table `minat_bakat`
 --
 ALTER TABLE `minat_bakat`
-  MODIFY `minat_bakat_id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `minat_bakat_id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 --
 -- AUTO_INCREMENT for table `rule`
 --
 ALTER TABLE `rule`
-  MODIFY `rule_id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
+  MODIFY `rule_id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `keahlian`
+--
+ALTER TABLE `keahlian`
+  ADD CONSTRAINT `keahlian_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Constraints for table `minat_bakat`
+--
+ALTER TABLE `minat_bakat`
+  ADD CONSTRAINT `minat_bakat_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Constraints for table `rule`
+--
+ALTER TABLE `rule`
+  ADD CONSTRAINT `rule_ibfk_2` FOREIGN KEY (`keahlian_id`) REFERENCES `keahlian` (`keahlian_id`),
+  ADD CONSTRAINT `rule_ibfk_3` FOREIGN KEY (`minat_bakat_id`) REFERENCES `minat_bakat` (`minat_bakat_id`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
