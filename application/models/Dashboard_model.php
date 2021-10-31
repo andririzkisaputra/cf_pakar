@@ -84,6 +84,10 @@ class Dashboard_model extends CI_Model
   public function auth($where, $tabel) {
     return $this->db->get_where($tabel, $where)->row();
   }
+
+  public function user_insert($data, $tabel) {
+    return $this->db->insert($tabel, $data);
+  }
 }
 
 ?>

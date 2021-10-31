@@ -40,6 +40,17 @@
 			}
 		}
 
+		public function user() {
+			if($this->session->userdata('status') != '1'){
+				redirect(base_url('admin'));
+			}else {
+				$this->load->view('theme/header.php');
+				$this->load->view('theme/navbar.php');
+				$this->load->view('content/admin/user_view.php');
+				$this->load->view('theme/footer.php');
+			}
+		}
+
 		public function rule() {
 			if($this->session->userdata('status') != '1'){
 				redirect(base_url('admin'));
@@ -164,6 +175,51 @@
 			$result['data'] 					 = $query;
 			print_r(json_encode($result));
 		}
+
+		public function get_user() {
+			$draw       		 = $_POST['draw'];
+			$start      		 = $_POST['start'];
+			$rowperpage 		 = $_POST['length'];
+			$columnIndex  	 = $_POST['order'][0]['column'];
+			$columnName   	 = $_POST['columns'][$columnIndex]['data'];
+			$columnSortOrder = $_POST['order'][0]['dir'];
+			$searchValue     = $_POST['search']['value'];
+			$where_like 		 = array(
+				'username'  => $searchValue
+			);
+			$query					 = $this->admin_model->get_data_tabel($where_like, $rowperpage, $start, 'created_on', 'user');
+			foreach ($query as $key => $value) {
+				$value->no		   = $key+1;
+				if ($value->status == '1') {
+					$value->status_f = '<div class="btn-group btn-group-toggle">'
+														 .'<a href="javascript:void(0)" type="button" class="btn btn-xs btn-success">Aktif</a>'
+													 .'</div>';
+				} else {
+					$value->status_f = '<div class="btn-group btn-group-toggle">'
+														 .'<a href="javascript:void(0)" type="button" class="btn btn-xs btn-danger">Delete</a>'
+													 .'</div>';
+				}
+				if ($value->level == '1') {
+					$value->level_f = '<div class="btn-group btn-group-toggle">'
+														 .'<a href="javascript:void(0)" type="button" class="btn btn-xs btn-success">Admin</a>'
+													 .'</div>';
+					$value->aksi     = '';
+				} else {
+					$value->level_f = '<div class="btn-group btn-group-toggle">'
+														 .'<a href="javascript:void(0)" type="button" class="btn btn-xs btn-info">User</a>'
+													 .'</div>';
+				 $value->aksi     = '<div class="btn-group btn-group-toggle">'
+				 									 // .'<a href="javascript:void(0)" type="button" class="btn btn-sm btn-success edit" data="'.$value->user_id.'">Ubah</a>'
+				 									 .'<a href="javascript:void(0)" type="button" class="btn btn-sm btn-danger hapus" data="'.$value->user_id.'">Hapus</a>'
+				 								 .'</div>';
+				}
+			}
+			$result['draw'] 					 = $draw;
+			$result['recordsTotal']    = $this->admin_model->get_all('keahlian');
+			$result['recordsFiltered'] = $this->admin_model->count_filter('keahlian', $searchValue, 'keahlian');
+			$result['data'] 					 = $query;
+			print_r(json_encode($result));
+		}
 		// End Get Tabel
 
 		// CRUD Minat Bakat
@@ -246,6 +302,14 @@
 				'keahlian_id' => $this->input->post('keahlian_id')
 			);
 			$result = $this->admin_model->del_data($data, 'keahlian');
+			print_r(json_encode($result));
+		}
+
+		function hapus_user(){
+			$data  = array(
+				'user_id' => $this->input->post('user_id')
+			);
+			$result = $this->admin_model->del_data($data, 'user');
 			print_r(json_encode($result));
 		}
 		// End CRUD Keahlian

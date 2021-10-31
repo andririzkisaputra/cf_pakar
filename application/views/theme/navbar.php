@@ -41,7 +41,7 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+                Data
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -62,6 +62,23 @@
                 <a href="<?php echo base_url()?>admin/rule" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Rule</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-id-badge"></i>
+              <p>
+                Data User
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo base_url()?>admin/user" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>User</p>
                 </a>
               </li>
             </ul>

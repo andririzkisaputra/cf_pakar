@@ -23,6 +23,11 @@ class Dashboard extends CI_Controller {
 		$this->load->view('content/login_user.php');
 	}
 
+	public function registrasi() {
+		$this->load->view('theme/header.php');
+		$this->load->view('content/registrasi_user.php');
+	}
+
 	public function login_user() {
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
@@ -38,6 +43,32 @@ class Dashboard extends CI_Controller {
 				'level'    =>  $cek_login->level,
 			);
 			$this->db->update('user', ['status' => '1']);
+			$this->session->set_userdata($data_session);
+			$result = base_url();
+		}else {
+			$result = false;
+		}
+		print_r(json_encode($result));
+	}
+
+	public function registrasi_user() {
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$data = array(
+			'username'   => $username,
+			'password'   => md5($password),
+			'status'     => '1',
+			'level'      => '2',
+			'created_on' => date('Y-m-d H:i:s'),
+		);
+		if ($username && $password) {
+			$insert = $this->dashboard_model->user_insert($data, 'user');
+			$data_session = array(
+				'username' => $username,
+				'user_id'  => $password,
+				'status'   => '1',
+				'level'    => '2',
+			);
 			$this->session->set_userdata($data_session);
 			$result = base_url();
 		}else {
