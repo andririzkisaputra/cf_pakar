@@ -151,48 +151,15 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Profile Aplikasi</h2>
-          <h3>Sejarah <span>Sekolah</span></h3>
-          <p>MI Muhammadiyah Butuh lahir tahun 1 april 1957. Pada awal berdirinya lokasi madrasah terbagi-bagi menjadi 2 tempat yaitu di Dusun Senden dan dusun Butuh.</p>
+          <h2>Tentang Aplikasi</h2>
+          <h3>Aplikasi <span>Minat Bakat</span></h3>
+          <p>
+            Aplikasi minat bakat dalam sepak bola merupakan platform konsultasi
+            yang bisa membantu anak menentukan minat sepak bola,
+            cukup dengan memilih minat yang diinginkan dan melakukan pengisian keahlian yang sesuai dengan anak tersebut,
+            yang dimana hasil dari aplikasi ini akan menjadi dasar untuk mengembangkan bakatnya dalam sepak bola.
+          </p>
         </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="100">
-            <img src="<?php echo base_url()?>assets/user/img/about.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <h3>Identitas MI Muhammadiyah Butuh</h3>
-            <ul>
-              <li>
-                <i class="bx bxs-school"></i>
-                <div>
-                  <h5>Nama Yayasan</h5>
-                  <p>Perserikatan Muhammadiyah</p>
-                </div>
-              </li>
-              <li>
-                <i class="bx bxs-institution"></i>
-                <div>
-                  <h5>Nama Lembaga</h5>
-                  <p>MI Muhammadiyah Butuh</p>
-                </div>
-              </li>
-              <li>
-                <i class="bx bxs-paper-plane"></i>
-                <div>
-                  <h5>Alamat</h5>
-                  <p>Desa Senden, Kec.Mungkid, Kab.Magelang, Provinsi Jawa Tengah, Kode Pos 56512</p>
-                </div>
-              </li>
-            </ul>
-            <p>
-              Kegiatan belajar mengajar di MI Muhammadiyah butuh di selenggarakan pada waktu pagi hari, dimulai pada pukul 07.00-14.00 WIB,
-              menyadari sangat pentingnya tenaga pendidikan dan keberhasilan proses belajar mengajar,
-              lembaga pedidikan ini benar-benar memperhatikan mutu guru.
-            </p>
-          </div>
-        </div>
-
       </div>
     </section><!-- End About Section -->
 

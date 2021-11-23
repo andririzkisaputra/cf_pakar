@@ -67,7 +67,7 @@
         <ul>
           <li class="active"><a href="<?php echo base_url()?>">Home</a></li>
           <li><a href="#featured-services">Minat Bakat</a></li>
-          <li><a href="#about">Profile</a></li>
+          <li><a href="#about">Tentang</a></li>
           <li><a href="#contact">Kontak</a></li>
           <li><a href="#" data-toggle="modal" data-target="#petunjuk_model">Petunjuk</a></li>
           <li><a href="<?php echo base_url()?>dashboard/logout">Logout</a></li>
