@@ -20,7 +20,10 @@ class Admin_model extends CI_Model {
     return $this->db->count_all($tabel);
   }
 
-  public function get_by($data, $tabel){
+  public function get_by($data, $tabel, $order_by = false){
+    if ($order_by) {
+      $this->db->order_by($order_by);
+    }
     return $this->db->get_where($tabel, $data)->result();
   }
 

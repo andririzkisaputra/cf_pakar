@@ -332,7 +332,7 @@
 			);
 			$minat_bakat = '';
 			$keahlian    = [];
-			$query  = $this->admin_model->get_by($data, 'rule');
+			$query  = $this->admin_model->get_by($data, 'rule', 'rule.keahlian_id ASC');
 			foreach ($query as $key => $value) {
 				$value->minat_bakat = $this->admin_model->get_by_rule(['minat_bakat_id' => $value->minat_bakat_id], 'minat_bakat');
 				$value->keahlian    = $this->admin_model->get_by_rule(['keahlian_id' => $value->keahlian_id], 'keahlian').' ('.$value->nilai.')';
