@@ -10,7 +10,7 @@
 
 		// Page
 		public function index() {
-			if($this->session->userdata('status') == '1'){
+			if($this->session->userdata('level') == '1'){
 				redirect(base_url('admin/minat_bakat'));
 			}else {
 				$this->load->view('theme/header.php');
@@ -19,7 +19,7 @@
 		}
 
 		public function minat_bakat() {
-			if($this->session->userdata('status') != '1'){
+			if($this->session->userdata('level') != '1'){
 				redirect(base_url('admin'));
 			}else {
 				$this->load->view('theme/header.php');
@@ -30,7 +30,7 @@
 		}
 
 		public function keahlian() {
-			if($this->session->userdata('status') != '1'){
+			if($this->session->userdata('level') != '1'){
 				redirect(base_url('admin'));
 			}else {
 				$this->load->view('theme/header.php');
@@ -41,7 +41,7 @@
 		}
 
 		public function user() {
-			if($this->session->userdata('status') != '1'){
+			if($this->session->userdata('level') != '1'){
 				redirect(base_url('admin'));
 			}else {
 				$this->load->view('theme/header.php');
@@ -52,7 +52,7 @@
 		}
 
 		public function rule() {
-			if($this->session->userdata('status') != '1'){
+			if($this->session->userdata('level') != '1'){
 				redirect(base_url('admin'));
 			}else {
 				$this->load->view('theme/header.php');
@@ -76,6 +76,7 @@
 				$data_session = array(
 					'username' => $cek_login->username,
 					'user_id'  => $cek_login->user_id,
+					'level'    => $cek_login->level,
 					'status'   => '1'
 				);
 				$this->db->update('user', ['status' => '1']);
@@ -185,7 +186,7 @@
 			$columnSortOrder = $_POST['order'][0]['dir'];
 			$searchValue     = $_POST['search']['value'];
 			$where_like 		 = array(
-				'username'  => $searchValue
+				'username'  => $searchValue,
 			);
 			$query					 = $this->admin_model->get_data_tabel($where_like, $rowperpage, $start, 'created_on', 'user');
 			foreach ($query as $key => $value) {
@@ -215,8 +216,8 @@
 				}
 			}
 			$result['draw'] 					 = $draw;
-			$result['recordsTotal']    = $this->admin_model->get_all('keahlian');
-			$result['recordsFiltered'] = $this->admin_model->count_filter('keahlian', $searchValue, 'keahlian');
+			$result['recordsTotal']    = $this->admin_model->get_all('user');
+			$result['recordsFiltered'] = $this->admin_model->count_filter('username', $searchValue, 'user');
 			$result['data'] 					 = $query;
 			print_r(json_encode($result));
 		}

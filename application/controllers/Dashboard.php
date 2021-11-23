@@ -9,7 +9,7 @@ class Dashboard extends CI_Controller {
 	}
 
 	public function index() {
-		if($this->session->userdata('level') == '2'){
+		if($this->session->userdata('level') == '2' ||  $this->session->userdata('level') == '1'){
 			$this->load->view('theme/dashboard/header');
 			$this->load->view('content/dashboard');
 			$this->load->view('theme/dashboard/footer');
@@ -19,7 +19,7 @@ class Dashboard extends CI_Controller {
 	}
 
 	public function login() {
-		$this->load->view('theme/header.php');
+		$this->load->view('theme/dashboard/header');
 		$this->load->view('content/login_user.php');
 	}
 
@@ -53,9 +53,13 @@ class Dashboard extends CI_Controller {
 
 	public function registrasi_user() {
 		$username = $this->input->post('username');
+		$sekolah  = $this->input->post('sekolah');
+		$umur     = $this->input->post('umur');
 		$password = $this->input->post('password');
 		$data = array(
 			'username'   => $username,
+			'sekolah'    => $sekolah,
+			'umur'       => $this->all_library->hitung_umur($umur),
 			'password'   => md5($password),
 			'status'     => '1',
 			'level'      => '2',

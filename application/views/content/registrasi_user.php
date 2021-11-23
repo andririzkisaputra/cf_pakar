@@ -26,9 +26,15 @@
                                 <input id="username" name="username" type="username" placeholder="Username" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                               </div>
                               <div class="form-group mb-3">
+                                <input id="sekolah" name="sekolah" type="text" placeholder="Sekolah" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                              </div>
+                              <div class="form-group mb-3">
+                                <input id="umur" name="umur" type="date" placeholder="Tanggal Lahir" required="" value="<?php echo date("Y-m-d", strtotime('2000-01-01')); ?>" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                              </div>
+                              <div class="form-group mb-3">
                                 <input id="password" name="password" type="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
                               </div>
-                              <button id="btn_registrasi" type="submit" class="btn btn-success btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign up</button>
+                              <button id="btn_registrasi" type="submit" class="btn btn-success btn-block text-uppercase mb-2 rounded-pill shadow-sm">Daftar</button>
                             </form>
                             <button id="btn_login" type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Kembali</button>
                         </div>
@@ -49,6 +55,8 @@ $('#btn_login').on('click',function(){
 
 $('#btn_registrasi').on('click',function(){
   var username = $('#username').val();
+  var sekolah  = $('#sekolah').val();
+  var umur     = $('#umur').val();
   var password = $('#password').val();
   $.ajax({
       type : "POST",
@@ -56,15 +64,19 @@ $('#btn_registrasi').on('click',function(){
       dataType : "JSON",
       data : {
         username : username,
+        sekolah  : sekolah,
+        umur     : umur,
         password : password
       },
       success: function(data){
         $('[name="username"]').val("");
+        $('[name="sekolah"]').val("");
+        $('[name="umur"]').val("");
         $('[name="password"]').val("");
         if (data) {
           window.location = data;
         }else {
-          alert("Username dan Password tidak boleh kosong, Silahkan Coba Lagi!");
+          alert("Data tidak boleh kosong, Silahkan Coba Lagi!");
         }
       }
   });

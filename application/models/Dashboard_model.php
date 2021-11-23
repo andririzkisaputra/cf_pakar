@@ -61,17 +61,9 @@ class Dashboard_model extends CI_Model
           $combine = $kaidah[$key_1][$key_2];
         }
       }
-      $hasil_identifikasi[$key_1] = $combine*100;
+      $hasil_identifikasi[$key_1] = number_format($combine*100,2);
       $combine = '';
     }
-    // print_r('Minat Id : '.json_encode($minat).'<br>');
-    // print_r('Keahlian Id : '.json_encode($keahlian_id).'<br>');
-    // print_r('Keyakinan Pakar : '.json_encode($keyakinan_pakar).'<br>');
-    // print_r('Keahlian Id User : '.json_encode($keahlian).'<br>');
-    // print_r('Keyakinan User : '.json_encode($keyakinan_user).'<br>');
-    // print_r('Hasil Kaidah : '.json_encode($kaidah).'<br>');
-    // print_r('Hasil Identifikasi : '.json_encode($hasil_identifikasi).'<br>');
-    // exit;
     $return = array(
       'hasil_identifikasi' => $hasil_identifikasi,
       'hasil_minat'        => $nama_minat,

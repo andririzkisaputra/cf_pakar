@@ -3,9 +3,9 @@
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
       <h1>Welcome to <span>Aplikasi</spa>
       </h1>
-      <h2>Minat dan bakat anak dalam olaraga sepakbola</h2>
+      <h2 style="color : #000000">Identifikasi Minat bakat anak dalam olahraga sepak bola </br> (Study kasus MI Muhammadiyah butuh, Mungkid, Magelang)</h2>
       <div class="d-flex">
-        <a type="button" class="btn-get-started scrollto" data-toggle="modal" data-target="#minat_model">Identifikasi</a>
+        <a type="button" class="btn-get-started scrollto" data-toggle="modal" data-target="#minat_model">Konsultasi</a>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -16,7 +16,7 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Pilih Minat Bakat</h4>
+          <h4 class="modal-title">Pilih Formasi</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body" style="position: relative; overflow-y: scroll; max-height: 400px;">
@@ -25,41 +25,6 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary" data-dismiss="modal" id='btn_minat'>Identifikasi</button>
-        </div>
-      </div>
-      <!-- End Modal content-->
-    </div>
-  </div>
-  <!-- End Model -->
-
-  <!-- Modal -->
-
-  <!-- Modal -->
-  <div class="modal fade" id="petunjuk_model" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Petunjuk Penggunaan</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="" style="margin-left: 15px; border: 2px solid #106eea; border-radius: 8px; padding: 13px 13px 0px 23px; width: 45%">
-              <p>Pilih tombol Identifikasi</p>
-            </div>
-            <div class="" style="margin-left: 15px; border: 2px solid #106eea; border-radius: 8px; padding: 13px 13px 0px 23px; width: 45%">
-              <p>Centang Minat yang Kamu Inginkan</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="" style="margin-left: 15px;margin-top: 10px; border: 2px solid #106eea; border-radius: 8px; padding: 13px 13px 0px 23px; width: 45%">
-              <p>Tentukan Keyakinan yang kamu Miliki</p>
-            </div>
-            <div class="" style="margin-left: 15px;margin-top: 10px; border: 2px solid #106eea; border-radius: 8px; padding: 13px 13px 0px 23px; width: 45%">
-              <p>Hasil Identifikasi</p>
-            </div>
-          </div>
         </div>
       </div>
       <!-- End Modal content-->
@@ -95,7 +60,23 @@
     </div>
   </div>
   <!-- End Model -->
-
+<!-- Modal -->
+  <div class="modal fade" id="petunjuk_model" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Petunjuk Penggunaan</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <img src="<?php echo base_url()?>assets/user/img/petunjuk.jpg" class="img-fluid" alt="">
+        </div>
+      </div>
+      <!-- End Modal content-->
+    </div>
+  </div>
+  <!-- End Model -->
   <!-- Modal -->
   <div class="modal fade" id="cf_model" role="dialog">
     <div class="modal-dialog">
@@ -126,32 +107,36 @@
         <div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="bx bxs-down-arrow-square"></i></div>
+              <!-- <div class="icon"><i class="bx bxs-down-arrow-square"></i></div> -->
               <h4 class="title"><a href="">Penjaga Gawang</a></h4>
+              <img src="<?php echo base_url('assets/user/img/gawang1.png')?>" alt="Italian Trulli" style="width:100%">
               <p class="description">Penjaga Gawang atau Kiper Satu hal yang paling wajib dimiliki oleh tim sepak bola. Penjaga gawang atau kipper adalah pemain yang berdiri di bawah mistar gawang sebagai kiper.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon"><i class="bx bxs-left-arrow-square"></i></div>
+              <!-- <div class="icon"><i class="bx bxs-left-arrow-square"></i></div> -->
               <h4 class="title"><a href="">Gelandang</a></h4>
+              <img src="<?php echo base_url('assets/user/img/bek1.png')?>" alt="Italian Trulli" style="width:100%;padding-bottom: -25px;margin-bottom: -17px;margin-top: -44px;">
               <p class="description">Gelandang, pemain tengah atau dalam bahasa Inggris disebut Midfield yang diposisikan antara bek dan penyerang. Tugas seorang gelandang yaitu untuk menghubungkan antara bek dan penyerang.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <div class="icon"><i class="bx bxs-up-arrow-square"></i></div>
-              <h4 class="title"><a href="">Pemain Bertahan</a></h4>
+              <!-- <div class="icon"><i class="bx bxs-up-arrow-square"></i></div> -->
+              <h4 class="title"><a href="">Bek/Pemain Bertahan</a></h4>
+              <img src="<?php echo base_url('assets/user/img/bek.png')?>" alt="Italian Trulli" style="width:100%">
               <p class="description">Pemain Bertahan atau Bek Posisi tepat berada di depan kiper dan di belakang pemain tengah. Pemain belakang ini disebut juga sebagai bek yang berasal dari bahasa Inggris back.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-              <div class="icon"><i class="bx bxs-right-arrow-square"></i></div>
+              <!-- <div class="icon"><i class="bx bxs-right-arrow-square"></i></div> -->
               <h4 class="title"><a href="">Penyerang</a></h4>
+              <img src="<?php echo base_url('assets/user/img/penyerang.png')?>" alt="Italian Trulli" style="width:100%;margin-top: -32px;margin-bottom: -19px;">
               <p class="description">Penyerang adalah pemain yang posisinya paling dekat dengan gawang lawan dan tugas utamanya adalah menciptakan gol. Tiga hal utama yang dibutuhkan pemain penyerang adalah teknik, kecepatan dan bakat.</p>
             </div>
           </div>
@@ -166,9 +151,9 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Profile Sekolah</h2>
+          <h2>Profile Aplikasi</h2>
           <h3>Sejarah <span>Sekolah</span></h3>
-          <p>MI Muhammadiyah Butuh lahir tahun 1 april 1957. Pada awal berdirinya lokasi madrasah terbagi-bagi menjadi 2 tempat yaitu diDusun Senden, dusun Butuh.</p>
+          <p>MI Muhammadiyah Butuh lahir tahun 1 april 1957. Pada awal berdirinya lokasi madrasah terbagi-bagi menjadi 2 tempat yaitu di Dusun Senden dan dusun Butuh.</p>
         </div>
 
         <div class="row">
@@ -201,7 +186,7 @@
               </li>
             </ul>
             <p>
-              Kegiatan belajar mengajar di MI Muhammadiah butuh di selenggarakan pada waktu pagi hari, dimulai pada pukul 07.00-14.00 WIB,
+              Kegiatan belajar mengajar di MI Muhammadiyah butuh di selenggarakan pada waktu pagi hari, dimulai pada pukul 07.00-14.00 WIB,
               menyadari sangat pentingnya tenaga pendidikan dan keberhasilan proses belajar mengajar,
               lembaga pedidikan ini benar-benar memperhatikan mutu guru.
             </p>
@@ -218,59 +203,40 @@
         <div class="owl-carousel testimonials-carousel">
 
           <div class="testimonial-item">
-            <img src="<?php echo base_url()?>assets/user/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-            <h3>Saul Goodman</h3>
-            <h4>Ceo &amp; Founder</h4>
-            <p>
+            <img src="<?php echo base_url()?>assets/user/img/udin2.jpg" class="testimonial-img" alt="">
+            <h3>Saefudin_yk</h3>
+            <h4>Developer</h4>
+            <!-- <p>
               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
               Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
+            </p> -->
           </div>
 
           <div class="testimonial-item">
-            <img src="<?php echo base_url()?>assets/user/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-            <h3>Sara Wilsson</h3>
-            <h4>Designer</h4>
-            <p>
+            <img src="<?php echo base_url()?>assets/user/img/fitri.jpeg" class="testimonial-img" alt="">
+            <h3>Fatsyahrina Fitriastuti,S.Si., M.T</h3>
+            <h4>Dosen Pembimbing I</h4>
+            <!-- <p>
               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
+            </p> -->
+          </div>
+          <div class="testimonial-item">
+            <img src="<?php echo base_url()?>assets/user/img/yumarlin.jpg" class="testimonial-img" alt="">
+            <h3>yumarlin MZ, S.Kom., M.Pd.,</h3>
+            <h4>Dosen Pembimbing II</h4>
+            <!-- <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p> -->
           </div>
 
-          <div class="testimonial-item">
-            <img src="<?php echo base_url()?>assets/user/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-            <h3>Jena Karlis</h3>
-            <h4>Store Owner</h4>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
-
-          <div class="testimonial-item">
-            <img src="<?php echo base_url()?>assets/user/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-            <h3>Matt Brandon</h3>
-            <h4>Freelancer</h4>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
-
-          <div class="testimonial-item">
-            <img src="<?php echo base_url()?>assets/user/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-            <h3>John Larson</h3>
-            <h4>Entrepreneur</h4>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
+          
+          
+          
 
         </div>
 
@@ -283,8 +249,7 @@
 
         <div class="section-title">
           <h2>Kontak</h2>
-          <h3><span>Tentang Saya</span></h3>
-          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+          <h3><span></span></h3>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -292,7 +257,7 @@
             <div class="info-box mb-4">
               <i class="bx bx-map"></i>
               <h3>Alamat</h3>
-              <p>Daerah Istimewa Yogyakarta, Indonesia</p>
+              <p>Butuh, Senden, Kempulan, Senden, Mungkid, Magelang, Jawa Tengah 56512</p>
             </div>
           </div>
 
@@ -300,7 +265,7 @@
             <div class="info-box  mb-4">
               <i class="bx bx-envelope"></i>
               <h3>Email</h3>
-              <p>contact@gmail.com</p>
+              <p>MI_muhammadiyah@gmail.com</p>
             </div>
           </div>
 
@@ -308,7 +273,7 @@
             <div class="info-box  mb-4">
               <i class="bx bx-phone-call"></i>
               <h3>Telpon</h3>
-              <p>+6282346276776</p>
+              <p>+6281326199980</p>
             </div>
           </div>
 
@@ -316,7 +281,7 @@
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-12 ">
-            <iframe class="mb-4 mb-lg-0" src="https://maps.google.com/maps?q=yogyakarta&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+            <iframe class="mb-4 mb-lg-0" src="https://maps.google.com/maps?q=butuh%20senden%20mungkit%20magelang&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
           </div>
         </div>
 

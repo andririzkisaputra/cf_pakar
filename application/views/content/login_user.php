@@ -33,9 +33,9 @@
                                   <input id="customCheck1" type="checkbox" checked class="custom-control-input">
                                   <label for="customCheck1" class="custom-control-label">Remember password</label>
                                 </div>
-                                <button id="btn_login" type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign in</button>
+                                <button id="btn_login" type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Masuk</button>
                             </form>
-                            <button id="btn_registrasi" type="submit" class="btn btn-success btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign up</button>
+                            <button id="btn_registrasi" type="submit" class="btn btn-success btn-block text-uppercase mb-2 rounded-pill shadow-sm">Daftar</button>
                         </div>
                     </div>
                 </div>

@@ -54,12 +54,12 @@
 
     <div class="container py-4">
       <div class="copyright">
-        &copy; Copyright <strong><span>Aplikasi</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Saefudin_yk</span></strong>. All Rights Reserved
       </div>
     </div>
   </footer>
 
-  <div id="preloader"></div>
+  <!-- <div id="preloader"></div> -->
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->

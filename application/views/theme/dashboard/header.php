@@ -42,12 +42,15 @@
 </head>
 
 <body>
+<?php if ($this->session->userdata('level')): ?>
 
   <!-- ======= Top Bar ======= -->
   <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
-        <i class="icofont-phone"></i> +6282346276776
+        <i class="icofont-live-support"></i> MI_muhammadiyah@gmail.com
+        <i class="icofont-phone"></i> 081326199980
+        <i class="icofont-location-pin"></i> Desa Senden, Mungkit, Magelang
       </div>
     </div>
   </div>
@@ -63,7 +66,8 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="<?php echo base_url()?>">Home</a></li>
-          <li><a href="#about">Profile Sekolah</a></li>
+          <li><a href="#featured-services">Minat Bakat</a></li>
+          <li><a href="#about">Profile</a></li>
           <li><a href="#contact">Kontak</a></li>
           <li><a href="#" data-toggle="modal" data-target="#petunjuk_model">Petunjuk</a></li>
           <li><a href="<?php echo base_url()?>dashboard/logout">Logout</a></li>
@@ -73,3 +77,4 @@
 
     </div>
   </header><!-- End Header -->
+<?php endif; ?>

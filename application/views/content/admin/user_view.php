@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Data Keahlian</h1>
+          <h1 class="m-0">Data User</h1>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -29,6 +29,8 @@
                   <th>No</th>
                   <th>Username</th>
                   <th>Status</th>
+                  <th>Sekolah</th>
+                  <th>Umur</th>
                   <th>Level</th>
                   <th>Tanggal Daftar</th>
                   <th>Aksi</th>
@@ -41,6 +43,8 @@
                   <th>No</th>
                   <th>Username</th>
                   <th>Status</th>
+                  <th>Sekolah</th>
+                  <th>Umur</th>
                   <th>Level</th>
                   <th>Tanggal Daftar</th>
                   <th>Aksi</th>
@@ -146,8 +150,7 @@ $(document).ready(function(){
     dom: 'Blfrtip',
     buttons: [],
     "lengthMenu": [10, 20, 50, 100, 200, 500, 1000, 5000, 10000],
-    "pageLength": 10,
-    'lengthChange': true,
+    "pageLength": 20,
     "processing": true,
     "serverSide": true,
     ajax : {
@@ -159,6 +162,8 @@ $(document).ready(function(){
       { data: 'no'},
       { data: 'username', 'className' : 'text-left' },
       { data: 'status_f', 'className' : 'text-left' },
+      { data: 'sekolah', 'className' : 'text-left' },
+      { data: 'umur', 'className' : 'text-left' },
       { data: 'level_f', 'className' : 'text-left' },
       { data: 'created_on', 'className' : 'text-left' },
       { data: 'aksi', 'className' : 'text-left' },
