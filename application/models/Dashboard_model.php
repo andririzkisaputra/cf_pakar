@@ -22,7 +22,7 @@ class Dashboard_model extends CI_Model
 		for ($i=0; $i < count($where); $i++) {
 			$this->db->or_where('rule.minat_bakat_id', $where[$i]);
 		}
-		$this->db->group_by('rule.keahlian_id');
+		$this->db->order_by('rule.keahlian_id', 'ASC')->group_by('rule.keahlian_id');
 		return $this->db->get()->result();
   }
 
@@ -34,7 +34,7 @@ class Dashboard_model extends CI_Model
 			$this->db->or_where('rule.minat_bakat_id', $minat[$i]);
 		}
 
-    $list_minat_bakat = $this->db->get()->result();
+    $list_minat_bakat = $this->db->order_by('rule.keahlian_id', 'ASC')->get()->result();
     $keyakinan_pakar  = [];
     $keahlian_id      = [];
     $key              = 0;
